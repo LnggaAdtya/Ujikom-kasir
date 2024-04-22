@@ -13,7 +13,19 @@ class sales extends Model
         'total_price',
         'customer_id',
         'user_id',
+        'bayar',
+        'kembalian',
     ];
+
+    public function customer()
+    {
+        return $this->belongsTo(customer::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function detail_sales()
     {

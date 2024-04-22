@@ -13,10 +13,9 @@ class customer extends Model
         'address',
         'no_hp',
     ];
-
-    public function sale()
+    public function sales()
     {
-        return $this->hasOne(sales::class);
+        return $this->hasMany(Sales::class);
     }
 
     

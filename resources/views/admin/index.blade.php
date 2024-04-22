@@ -27,20 +27,23 @@
             <tr>
                 <td>{{$no++}}</td>
                 <td>
-                    <img src="{{asset ('data_foto/' .$product->image)}}" alt="image">
+                    <img src="{{asset ('assets/data_foto/' .$product->image)}}" width="120" >
                 </td>
                 <td>{{$product['name']}}</td>
-                <td>{{$product['price']}}</td>
+                <td>Rp {{ number_format($product->price, 0, ',', '.')}}</td>
                 <td>{{$product['stok']}}</td>
                 <td>
                     <div class="btn-group">
-                    <a href="{{route('edit', $product->id)}}" class="btn btn-primary" style="text-decoration: none; margin-right: 10px;">
-                    <i class=" fas fa-pencil-alt"></i>
+                    <a href="{{route('edit', $product->id)}}" class="btn btn-success" style="text-decoration: none; margin-right: 10px;">
+                    <span>Edit</span>
+                </a>
+                    <a href="{{route('editStok', $product->id)}}" class="btn btn-primary" style="text-decoration: none; margin-right: 10px;">
+                    <span>Edit stok</span>
                 </a>
                 <form action="{{route('delete', $product->id)}}" method="post">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger fas fa-trash-alt" style="text-decoration: none; margin-right: 10px;"></button>
+                <button type="submit" class="btn btn-danger" style="text-decoration: none; margin-right: 10px;">Delete</button>
                 </form>
             </div>
                 </td>

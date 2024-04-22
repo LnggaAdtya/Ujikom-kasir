@@ -12,7 +12,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+      
     }
 
     /**
@@ -20,7 +20,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -28,7 +28,6 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
     }
 
     /**

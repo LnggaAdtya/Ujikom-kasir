@@ -73,28 +73,26 @@
                 <!-- ============================================================== -->
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
                    
-                    <!-- ============================================================== -->
-                    <!-- Right side toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav ms-auto d-flex align-items-center">
+                   <!-- ============================================================== -->
+                   <!-- Right side toggle and nav items -->
+                   <!-- ============================================================== -->
+                   <ul class="navbar-nav ms-auto d-flex align-items-center">
 
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <li class=" in">
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                        <li>
-                            <a class="app-search d-none d-md-block me-3" style="text-decoration: none;">
-                                <h4>Selamat datang admin</h6>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                    </ul>
-                </div>
+                       <!-- ============================================================== -->
+                       <!-- Search -->
+                       <!-- ============================================================== -->
+
+                       <li>
+                               <div class="profile-pic">
+                                   <span class="text-white font-medium">Selamat datang admin!</span>
+                               </div>
+                       </li>
+                       <!-- ============================================================== -->
+                       <!-- User profile and search -->
+                       <!-- ============================================================== -->
+                       
+                   </ul>
+               </div>
             </nav>
         </header>
         <!-- ============================================================== -->
@@ -111,7 +109,7 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/landing"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
@@ -125,19 +123,30 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/saleAdmin"
+                                aria-expanded="false">
+                                <i class=" fas fa-shopping-cart" aria-hidden="true"></i>
+                                <span class="hide-menu">Sale</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/user"
                                 aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">User</span>
                             </a>
                         </li>
+                        
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
-                                aria-expanded="false">
-                                <i class=" fas fa-shopping-cart" aria-hidden="true"></i>
-                                <span class="hide-menu">Sale</span>
-                            </a>
-                        </li>
+                        <form action="{{url('logout')}}" meyhod="POST">
+                                @csrf
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                aria-expanded="false" href="/logout">
+                                <i class=" fas fa-sign-out-alt" aria-hidden="true"></i>
+                                <span class="hide-menu">Logout</span>
+                            </a></button>
+                            </form>
+                            </li>
                     </ul>
 
                 </nav>
@@ -151,26 +160,7 @@
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <div class="page-breadcrumb bg-white">
-                <div class="row align-items-center">
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Dashboard</h4>
-                    </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                    </div>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
+        <div class="page-wrapper">  
             <div class="container-fluid">
 
                 <div class="row">
@@ -200,12 +190,6 @@
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
     <script src="/assets/plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="/assets/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

@@ -15,6 +15,10 @@ class DetailSalesController extends Controller
         //
     }
 
+    public function simpanPenjualan(Request $request)
+    {
+    }
+
     /**
      * Show the form for creating a new resource.
      */

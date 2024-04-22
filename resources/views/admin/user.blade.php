@@ -5,7 +5,7 @@
     <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                <form class="form-horizontal form-material" action="#" method="post">
+                <form class="form-horizontal form-material" action="{{route ('createUser')}}" method="post">
                     @csrf
                     <div class="form-group mb-4">
                         <label class="col-md-12 p-0">Email</label>
@@ -23,7 +23,7 @@
                             <select name="role" class="form-control" required>
                                 <option selected hidden disabled>Choose</option>
                                 <option value="admin">Admin</option>
-                                <option value="kasir">Employe</option>
+                                <option value="employe">Employe</option>
                             </select>
                         </div>
                     </div>
@@ -62,18 +62,22 @@
                     $no = 1;
                     @endphp
 
-                    {{-- @foreach ($users as $user) --}}
+                    @foreach ($users as $user)
                         <tr>
                             <th scope="row"></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$user['email']}}</td>
+                            <td>{{$user['name']}}</td>
+                            <td>{{$user['role']}}</td>
                             <td>
-                                <a href="#" class="btn btn-success  fas fa-edit"></a>
-                                <a href="#" class="btn btn-danger   fas fa-trash-alt"></a>
+                                <a href="{{route ('editUser', $user->id)}}" class="btn btn-success  fas fa-edit"></a>
+                                <form action="{{route ('deleteUser', $user->id)}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                <button type="submit" class="btn btn-danger   fas fa-trash-alt" style="text-decoration: none; margin-right: 10px;"></button>
+                                </form>
                             </td>
                         </tr>
-                        {{-- @endforeach --}}
+                    @endforeach
                     </tbody>
                 </table>
             </div>

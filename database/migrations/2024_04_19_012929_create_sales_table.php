@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->date('sale_date');
+            $table->string('bayar');
+            $table->string('kembalian');
             $table->double('total_price', 8,2);
             $table->bigInteger('customer_id');
             $table->bigInteger('user_id');
